@@ -7,7 +7,7 @@ pub fn read_line() -> String {
     std::io::stdin()
         .read_line(&mut buffer)
         .expect("Couldn't read user input");
-    buffer.pop(); // We don't want the final '\n'
+    buffer.truncate(buffer.trim_end().len());
     return buffer;
 }
 
